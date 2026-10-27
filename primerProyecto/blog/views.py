@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+#VIEWS
+def principal(request):
+    return render(request, "blog/index.html")
