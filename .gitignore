@@ -1,1 +1,3 @@
 primerProyecto/.env
+__pycache__
+*.pyc
