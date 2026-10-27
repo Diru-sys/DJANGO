@@ -1,0 +1,6 @@
+# PRIMER PROYECTO DJANGO
+
+# PLACEHOLDER
+
+# AUTOR
+> Carlos Sánchez Damas
