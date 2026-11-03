@@ -1,3 +1,11 @@
-primerProyecto/.env
-__pycache__
+# Entornos virtuales
+.env/
+.venv/
+venv/
+
+# Archivos de caché y compilados
+__pycache__/
 *.pyc
+
+# Variables de entorno secretas
+.env.local
