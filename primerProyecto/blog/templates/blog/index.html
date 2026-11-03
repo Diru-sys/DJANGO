@@ -9,7 +9,7 @@
     <p>Funciona!</p>
     <ul>
         {% for post in posts %}
-            <li>{{post.titulo}} ({{post.autor}})</li>
+            <li><a href="{% url 'detalles' pk=post.pk %}"> {{post.titulo}} ({{post.autor}})</a></li>
         {% endfor %}
     </ul>
 </body>
