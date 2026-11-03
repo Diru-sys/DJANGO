@@ -3,7 +3,7 @@ from .models import Post
 
 #VIEWS
 def principal(request):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(titulo__icontains="th")
     print(posts)
     return render(request, "blog/index.html")
 
