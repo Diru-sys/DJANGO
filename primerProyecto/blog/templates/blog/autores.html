@@ -2,6 +2,8 @@
 {% block main %}
     <h1>Lista de Autores</h1>
     {%for autor in autores%}
-        <p>{{autor}}</p>
+        <p>
+            <a href="{% url 'entradasAutor' pk=autor.pk %}">{{ autor }}</a>
+        </p>
     {% endfor %}
 {% endblock %}
