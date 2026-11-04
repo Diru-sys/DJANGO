@@ -16,3 +16,7 @@ def autores(request):
     autores = Autor.objects.all()
     context = {"autores": autores}
     return render(request, "blog/autores.html", context)
+
+def entradasAutor(request, pk):
+    posts = Post.objects.filter(autor_id=pk)
+    return render(request, "blog/entradasAutor.html", {"posts": posts})

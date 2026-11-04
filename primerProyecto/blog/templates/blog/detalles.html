@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=ç, initial-scale=1.0">
-    <title>Detalles de la entrada</title>
-</head>
-<body>
-    <h1>Detalles de las entrada</h1>
-    <main>
-        <p><strong>Titulo: </strong> {{post.titulo}} </p>
-        <p><strong>Autor: </strong>{{post.autor}} </p>
-        <p><strong>Cuerpo: </strong>{{post.cuerpo}} </p>
-        <p><strong>Fecha de publicación: </strong>{{post.fecha_publicacion}} </p>
-        <p><a href="{% url 'principal' %}">Volver al inicio</a></p>
-    </main>
-</body>
-</html>
+{% extends 'blog/index.html' %}
+
+{% block main %}
+    <h1>Detalles de la entrada</h1>
+    <p><strong>Título: </strong>{{ post.titulo }}</p>
+    <p><strong>Autor: </strong>{{ post.autor }}</p>
+    <p><strong>Cuerpo: </strong>{{ post.cuerpo }}</p>
+    <p><strong>Fecha de publicación: </strong>{{ post.fecha_publicacion }}</p>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'blog/index.html' %}
+{% block main %}
+    <h1>Lista de Autores</h1>
+    {%for autor in autores%}
+        <p>{{autor}}</p>
+    {% endfor %}
+{% endblock %}

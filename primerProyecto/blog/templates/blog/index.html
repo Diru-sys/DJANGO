@@ -11,19 +11,18 @@
     </style>
 </head>
 <body>
-    {% block main %}
-    <main>
-        <h1>Mi pagina principal</h1>
-        {% for post in posts %}
-            <a href="{% url 'detalles' pk=post.pk %}"> {{post.titulo}} ({{post.autor}})</a> <br>
-        {% endfor %}
-        <hr>
-    </main>
-    <footer>
-        Footer página
-    </footer>
-    {% endblock %}
+    <header>
+        <a href="{% url 'principal' %}">Inicio</a> | 
+        <a href="{% url 'autores' %}">Autores</a>
+    </header>
     <hr>
-    <a href="{% url 'autores' %}">Autores</a>
+    <main>
+        {% block main %}
+            <h1>Mi página principal</h1>
+            {% for post in posts %}
+                <a href="{% url 'detalles' pk=post.pk %}">{{ post.titulo }} ({{ post.autor }})</a> <br>
+            {% endfor %}
+        {% endblock %}
+    </main>
 </body>
 </html>
