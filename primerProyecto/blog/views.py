@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Autor
 
 #VIEWS
 def principal(request):
@@ -8,9 +8,11 @@ def principal(request):
             }
     return render(request, "blog/index.html", context)
 
-def ji(request):
-    return render(request, "blog/ji.html")
-
 def detalles(request, pk):
     post= Post.objects.get(id=pk)
     return render(request, "blog/detalles.html", {"post": post})
+
+def autores(request):
+    autores = Autor.objects.all()
+    context = {"autores": autores}
+    return render(request, "blog/autores.html", context)

@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    <style>
+        * {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <p>Funciona!</p>
-    <ul>
+    {% block main %}
+    <main>
+        <h1>Mi pagina principal</h1>
         {% for post in posts %}
-            <li><a href="{% url 'detalles' pk=post.pk %}"> {{post.titulo}} ({{post.autor}})</a></li>
+            <a href="{% url 'detalles' pk=post.pk %}"> {{post.titulo}} ({{post.autor}})</a> <br>
         {% endfor %}
-    </ul>
+        <hr>
+    </main>
+    <footer>
+        Footer página
+    </footer>
+    {% endblock %}
+    <hr>
+    <a href="{% url 'autores' %}">Autores</a>
 </body>
 </html>
