@@ -1,6 +1,6 @@
 {% extends 'blog/index.html' %}
 {% block main %}
-    <h1>Entradas del autor</h1>
+    <h1>Entradas del autor - {{autor.nombre}}</h1>
     {% for post in posts%}
         <a href="{% url 'detalles' pk=post.pk %}">{{ post.titulo}}</a> <br>
     {% endfor %}

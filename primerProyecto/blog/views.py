@@ -8,8 +8,8 @@ def principal(request):
     return render(request, "blog/index.html", context)
 
 def detalles(request, pk):
-    post = Post.objects.get(id=pk)
-    context = {"posts": post}
+    posts = Post.objects.get(id=pk)
+    context = {"posts": posts}
     return render(request, "blog/detalles.html", context)
 
 def autores(request):
@@ -18,6 +18,7 @@ def autores(request):
     return render(request, "blog/autores.html", context)
 
 def entradasAutor(request, pk):
+    autor = Autor.objects.get(id=pk)
     posts = Post.objects.filter(autor=pk)
-    context = {"posts": posts}
+    context = {"posts": posts, "autor": autor}
     return render(request, "blog/entradasAutor.html", context)

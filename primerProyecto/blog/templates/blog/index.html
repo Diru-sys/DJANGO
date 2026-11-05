@@ -20,7 +20,7 @@
         {% block main %}
             <h1>Mi página principal</h1>
             {% for post in posts %}
-                <a href="{% url 'detalles' pk=post.pk %}">{{ post.titulo }} ({{ post.autor }})</a> <br>
+                <a href="{% url 'detalles' pk=post.pk %}">{{ post.titulo }}</a> <a href="{% url 'entradasAutor' pk=post.autor.pk%}"> ({{ post.autor }})</a> <br>
             {% endfor %}
         {% endblock %}
     </main>
