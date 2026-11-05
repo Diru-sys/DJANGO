@@ -10,11 +10,20 @@ class Autor(models.Model):
         return f"{self.nombre} {self.apellidos}"
 
 
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.nombre}"
+
+
 class Post(models.Model):
     titulo = models.CharField(max_length=200)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, related_name='posts')
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='categoria')
     cuerpo = models.TextField()
     fecha_publicacion = models.DateTimeField()
 
     def __str__(self):
         return f"{self.titulo}"
+

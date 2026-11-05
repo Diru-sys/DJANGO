@@ -22,6 +22,11 @@
             {% for post in posts %}
                 <a href="{% url 'detalles' pk=post.pk %}">{{ post.titulo }}</a> <a href="{% url 'entradasAutor' pk=post.autor.pk%}"> ({{ post.autor }})</a> <br>
             {% endfor %}
+            <hr>
+            <h1>Categorías</h1>
+            {%for categoria in categorias%}
+                <a href=""
+            {% endfor %}
         {% endblock %}
     </main>
 </body>
