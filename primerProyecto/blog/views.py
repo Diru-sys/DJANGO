@@ -4,13 +4,13 @@ from .models import Post, Autor
 #VIEWS
 def principal(request):
     posts = Post.objects.all()
-    context = {"posts": posts
-            }
+    context = {"posts": posts}
     return render(request, "blog/index.html", context)
 
 def detalles(request, pk):
-    post= Post.objects.get(id=pk)
-    return render(request, "blog/detalles.html", {"post": post})
+    posts= Post.objects.get(id=pk)
+    context = {"posts": posts}
+    return render(request, "blog/detalles.html", context)
 
 def autores(request):
     autores = Autor.objects.all()
@@ -18,5 +18,6 @@ def autores(request):
     return render(request, "blog/autores.html", context)
 
 def entradasAutor(request, pk):
-    posts = Post.objects.filter(autor_id=pk)
-    return render(request, "blog/entradasAutor.html", {"posts": posts})
+    posts = Post.objects.filter(autor=pk)
+    context = {"posts": posts}
+    return render(request, "blog/entradasAutor.html", context)
