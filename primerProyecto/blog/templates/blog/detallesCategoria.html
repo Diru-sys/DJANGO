@@ -1,0 +1,8 @@
+{% extends 'blog/index.html' %}
+
+{% block main %}
+    <h1>Entradas de la categoria</h1>
+    {% for post in posts%}
+        <a href="{% url 'detallesEntrada' pk=post.pk %}">{{ post.titulo}}</a> <br>
+    {% endfor %}
+{% endblock %}

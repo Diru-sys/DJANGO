@@ -13,19 +13,20 @@
 <body>
     <header>
         <a href="{% url 'principal' %}">Inicio</a> - 
-        <a href="{% url 'autores' %}">Autores</a>
+        <a href="{% url 'autores' %}">Autores</a> - 
     </header>
     <hr>
     <main>
         {% block main %}
             <h1>Mi página principal</h1>
             {% for post in posts %}
-                <a href="{% url 'detalles' pk=post.pk %}">{{ post.titulo }}</a> <a href="{% url 'entradasAutor' pk=post.autor.pk%}"> ({{ post.autor }})</a> <br>
+                <a href="{% url 'detallesEntrada' pk=post.pk %}">{{ post.titulo }}</a> <a href="{% url 'entradasAutor' pk=post.autor.pk%}"> ({{ post.autor }})</a> <br>
             {% endfor %}
+            <br>
             <hr>
             <h1>Categorías</h1>
             {%for categoria in categorias%}
-                <a href=""
+                <a href="{% url 'detallesCategoria' pk=categoria.pk %}">{{categoria.nombre}}</a> <br>
             {% endfor %}
         {% endblock %}
     </main>
