@@ -23,6 +23,7 @@ class Post(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='categoria')
     cuerpo = models.TextField()
     fecha_publicacion = models.DateTimeField()
+    imagen = models.ImageField(upload_to="posts/", blank=True, null=True)
 
     def __str__(self):
         return f"{self.titulo}"

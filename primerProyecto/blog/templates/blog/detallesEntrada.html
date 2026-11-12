@@ -7,4 +7,5 @@
     <p><strong>Categoria: </strong>{{ posts.categoria}}</p>
     <p><strong>Cuerpo: </strong>{{ posts.cuerpo }}</p>
     <p><strong>Fecha de publicación: </strong>{{ posts.fecha_publicacion }}</p>
+    <p><strong>Imagen: </strong><img src="{{ posts.imagen.url }}" alt="{{ posts.titulo }}" style="max-width: 400px;"></p>
 {% endblock %}
